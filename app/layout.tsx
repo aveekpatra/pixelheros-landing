@@ -13,9 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Awake - Building Bold Brands with Thoughtful Design",
+  title:
+    "PixelHeros - Prague Digital Agency for Local Businesses | Websites, SEO & Social Media",
   description:
-    "At Awake, we help small startups tackle the world's biggest challenges with tailored solutions, guiding you from strategy to success in a competitive market.",
+    "We help Prague restaurants, salons, hotels and local businesses grow online with professional websites, powerful SEO, and engaging social media. Monthly subscriptions or one-time payments available.",
 };
 
 export default function RootLayout({
