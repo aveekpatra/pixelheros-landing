@@ -13,7 +13,9 @@ export default function Footer() {
             <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
               <div className="w-4 h-4 bg-white rounded-full"></div>
             </div>
-            <span className="text-2xl font-semibold text-black">Awake</span>
+            <span className="text-2xl font-semibold text-black">
+              PixelHeros
+            </span>
           </div>
 
           {/* Navigation Links */}
@@ -73,7 +75,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-gray-100">
           {/* Copyright */}
           <div className="text-gray-500 text-sm">
-            © 2025 Awake Digital Agency. All rights reserved.
+            © 2025 PixelHeros Digital Agency. All rights reserved.
           </div>
 
           {/* Legal Links */}
