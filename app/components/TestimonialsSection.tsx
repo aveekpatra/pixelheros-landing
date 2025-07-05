@@ -12,8 +12,8 @@ export default function TestimonialsSection() {
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black text-center mb-12 sm:mb-16 leading-tight max-w-4xl mx-auto px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-150px" }}
         >
           What our{" "}
           <span className="italic font-light text-blue-600">clients</span>
@@ -27,16 +27,16 @@ export default function TestimonialsSection() {
           className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+          viewport={{ once: true, margin: "-150px" }}
         >
           {/* Main Testimonial - Large */}
           <motion.div
             className="lg:col-span-2"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, delay: 0.15 }}
+            viewport={{ once: true, margin: "-150px" }}
           >
             <div className="bg-black rounded-3xl p-6 sm:p-8 h-full relative overflow-hidden">
               <div className="absolute top-4 left-4 text-gray-400 text-xs sm:text-sm">
@@ -84,8 +84,8 @@ export default function TestimonialsSection() {
             className="bg-green-200 rounded-3xl p-6 sm:p-8 flex flex-col justify-center items-center text-center"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, delay: 0.15 }}
+            viewport={{ once: true, margin: "-150px" }}
             whileHover={{ scale: 1.05 }}
             style={{ willChange: "transform" }}
           >
@@ -108,8 +108,8 @@ export default function TestimonialsSection() {
           className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mt-4 sm:mt-6"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.3, delay: 0.2 }}
+          viewport={{ once: true, margin: "-150px" }}
         >
           {/* Left Testimonial - Biotech with Background */}
           <div className="rounded-3xl h-80 sm:h-96 relative overflow-hidden">

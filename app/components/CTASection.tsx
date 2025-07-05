@@ -12,16 +12,16 @@ export default function CTASection() {
           className="bg-gray-50 rounded-3xl p-8 sm:p-10 md:p-12 lg:p-16 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-150px" }}
         >
           {/* Main Heading */}
           <motion.h2
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6 leading-tight max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            viewport={{ once: true, margin: "-150px" }}
           >
             Ready to{" "}
             <span className="italic font-light text-green-600">grow</span> your
@@ -34,8 +34,8 @@ export default function CTASection() {
             className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, delay: 0.2 }}
+            viewport={{ once: true, margin: "-150px" }}
           >
             We&apos;re here to help small and medium businesses establish a
             strong digital presence. Professional websites, effective SEO, and
@@ -47,8 +47,8 @@ export default function CTASection() {
             className="bg-black text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors mx-auto text-sm sm:text-base"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            viewport={{ once: true, margin: "-150px" }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             style={{ willChange: "transform" }}

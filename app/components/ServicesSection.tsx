@@ -19,8 +19,8 @@ export default function ServicesSection() {
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black text-center mb-12 sm:mb-16 leading-tight px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-150px" }}
         >
           Essential services to{" "}
           <span className="italic font-light text-green-600">grow</span>
@@ -36,8 +36,8 @@ export default function ServicesSection() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 mb-12 sm:mb-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+          viewport={{ once: true, margin: "-150px" }}
         >
           {[
             {
@@ -76,8 +76,8 @@ export default function ServicesSection() {
               className={`${service.bg} p-6 sm:p-8 rounded-3xl`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.3, delay: 0.2 + index * 0.05 }}
+              viewport={{ once: true, margin: "-150px" }}
               whileHover={{
                 scale: 1.05,
                 transition: { duration: 0.2 },
@@ -108,15 +108,15 @@ export default function ServicesSection() {
           className="bg-black rounded-3xl p-6 sm:p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          viewport={{ once: true, margin: "-150px" }}
         >
           <motion.div
             className="text-white text-center lg:text-left"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, delay: 0.2 }}
+            viewport={{ once: true, margin: "-150px" }}
           >
             <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2">
               Ready to grow your business online?
@@ -129,8 +129,8 @@ export default function ServicesSection() {
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full lg:w-auto"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            viewport={{ once: true, margin: "-150px" }}
           >
             <motion.a
               href="#contact"

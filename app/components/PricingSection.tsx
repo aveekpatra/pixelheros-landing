@@ -15,8 +15,8 @@ export default function PricingSection() {
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black text-center mb-12 sm:mb-16 leading-tight max-w-4xl mx-auto px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-150px" }}
         >
           Choose the{" "}
           <span className="italic font-light text-blue-600">plan</span> that

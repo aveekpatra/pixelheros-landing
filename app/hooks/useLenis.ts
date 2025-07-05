@@ -15,6 +15,10 @@ export function useLenis() {
       syncTouch: false,
       touchMultiplier: 2,
       infinite: false,
+      prevent: (node) => {
+        // Prevent smooth scrolling on header and its children
+        return node.tagName === "HEADER" || node.closest("header") !== null;
+      },
     });
 
     // Handle anchor links with offset for fixed header

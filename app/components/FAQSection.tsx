@@ -53,8 +53,8 @@ export default function FAQSection() {
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black text-center mb-12 sm:mb-16 leading-tight px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-150px" }}
         >
           Common{" "}
           <span className="italic font-light text-orange-600">questions</span>{" "}
@@ -74,8 +74,8 @@ export default function FAQSection() {
               className="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-200"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
-              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.3, delay: 0.05 + index * 0.03 }}
+              viewport={{ once: true, margin: "-100px" }}
             >
               <button
                 onClick={() => toggleFAQ(index)}

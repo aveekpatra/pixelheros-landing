@@ -12,8 +12,8 @@ export default function PortfolioSection() {
           className="text-center mb-16 sm:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-150px" }}
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight max-w-4xl mx-auto px-4 sm:px-0 mb-6 sm:mb-8">
             Recent projects that{" "}
@@ -35,8 +35,8 @@ export default function PortfolioSection() {
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+          viewport={{ once: true, margin: "-150px" }}
         >
           {[
             {
@@ -109,8 +109,8 @@ export default function PortfolioSection() {
               className={`${project.bgColor} rounded-3xl p-8 sm:p-10 relative overflow-hidden group hover:shadow-xl transition-all duration-500`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.3, delay: 0.2 + index * 0.05 }}
+              viewport={{ once: true, margin: "-150px" }}
               whileHover={{ y: -8 }}
               style={{ willChange: "transform" }}
             >
@@ -192,8 +192,8 @@ export default function PortfolioSection() {
           className="text-center mt-16 sm:mt-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.3, delay: 0.4 }}
+          viewport={{ once: true, margin: "-150px" }}
         >
           <p className="text-gray-600 text-lg mb-6">
             Ready to see similar results for your business?

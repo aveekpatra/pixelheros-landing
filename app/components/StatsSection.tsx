@@ -12,8 +12,8 @@ export default function StatsSection() {
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black text-center mb-4 sm:mb-6 leading-tight w-full px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-150px" }}
         >
           Where{" "}
           <span className="italic font-light text-blue-600">fresh ideas</span>{" "}
@@ -27,8 +27,8 @@ export default function StatsSection() {
           className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+          viewport={{ once: true, margin: "-150px" }}
         >
           {[
             {
@@ -55,8 +55,8 @@ export default function StatsSection() {
               className={`flex items-center gap-2 ${item.bg} ${item.textColor} px-3 sm:px-5 py-2 sm:py-2.5 rounded-full`}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.3, delay: 0.2 + index * 0.05 }}
+              viewport={{ once: true, margin: "-150px" }}
               whileHover={{ scale: 1.05 }}
             >
               <item.icon size={16} className="sm:w-[18px] sm:h-[18px]" />
@@ -72,8 +72,8 @@ export default function StatsSection() {
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 text-center max-w-4xl mx-auto"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.4, delay: 0.3 }}
+          viewport={{ once: true, margin: "-150px" }}
         >
           {[
             {
@@ -99,8 +99,8 @@ export default function StatsSection() {
               key={stat.label}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 + index * 0.2 }}
-              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
+              viewport={{ once: true, margin: "-150px" }}
               whileHover={{ scale: 1.05 }}
             >
               <motion.div
@@ -108,12 +108,12 @@ export default function StatsSection() {
                 initial={{ scale: 0.5 }}
                 whileInView={{ scale: 1 }}
                 transition={{
-                  duration: 0.8,
-                  delay: 1 + index * 0.2,
+                  duration: 0.4,
+                  delay: 0.5 + index * 0.1,
                   type: "spring",
-                  stiffness: 200,
+                  stiffness: 300,
                 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, margin: "-150px" }}
               >
                 {stat.prefix && (
                   <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl align-top">
