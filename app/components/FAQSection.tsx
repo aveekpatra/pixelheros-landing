@@ -10,34 +10,33 @@ export default function FAQSection() {
     {
       question: "How quickly will my business appear on Google?",
       answer:
-        "Most of our clients see their business ranking on Google's first page within 2-3 months for local searches. We start with Google My Business optimization and local SEO, which typically shows results within 4-6 weeks. Your website will be live within 2 weeks of starting the project.",
+        "Most of our clients see improved Google rankings within 2-3 months for local searches. We start with Google My Business optimization and local SEO, which typically shows results within 4-6 weeks. Your website will be live within 2 weeks of starting the project.",
     },
     {
-      question:
-        "Do you work with restaurants, salons, and hotels specifically?",
+      question: "Do you work with restaurants, salons, and small businesses?",
       answer:
-        "Yes! We specialize in local Prague businesses including restaurants, cafés, beauty salons, hotels, and other service-based businesses. We understand the unique challenges of attracting local customers and have proven strategies for each industry type.",
+        "Yes! We work with various small and medium businesses including restaurants, cafés, beauty salons, fitness studios, and other service-based businesses. We understand the unique challenges of attracting local customers and have proven strategies for different industry types.",
     },
     {
       question:
         "What's the difference between monthly subscription and one-time payment?",
       answer:
-        "Monthly subscription includes ongoing support, regular updates, fresh content, and continuous optimization. One-time payment covers the initial setup and 6-12 months of basic support. Most successful businesses choose monthly for consistent growth and staying ahead of competitors.",
+        "Monthly subscription includes ongoing support, regular updates, fresh content, and continuous optimization. One-time payment covers the initial setup and 3-6 months of basic support. Most successful businesses choose monthly for consistent growth and staying competitive.",
     },
     {
       question: "Can you help with social media for my business?",
       answer:
-        "Absolutely! Our Premium plan includes complete social media management for Instagram, Facebook, and Google reviews. We create engaging content, manage your posts, respond to customers, and help build your online reputation to attract more local customers.",
+        "Absolutely! Our Pro plan includes social media management for Instagram, Facebook, and Google reviews. We create engaging content, manage your posts, respond to customers, and help build your online reputation to attract more local customers.",
     },
     {
-      question: "How do you measure success for local businesses?",
+      question: "How do you measure success for small businesses?",
       answer:
-        "We track key metrics that matter to your business: Google ranking positions, website visitors from Prague, phone calls and inquiries, online bookings/orders, and overall revenue increase. You'll receive monthly reports showing your progress and ROI.",
+        "We track key metrics that matter to your business: Google ranking positions, website visitors, phone calls and inquiries, online bookings/orders, and overall revenue increase. You'll receive monthly reports showing your progress and return on investment.",
     },
     {
-      question: "Do you provide services in Czech language?",
+      question: "Are you a new agency? Can I trust you with my business?",
       answer:
-        "Yes! Our team is fluent in both Czech and English. We create content in Czech for your local audience and can communicate with you in your preferred language. We understand the Prague market and local customer behavior.",
+        "Yes, we're a new agency, but we're built on proven strategies and best practices. We focus on transparency, clear communication, and delivering measurable results. We offer competitive pricing and work closely with each client to ensure their success.",
     },
   ];
 
@@ -50,9 +49,14 @@ export default function FAQSection() {
       <div className="max-w-4xl mx-auto">
         {/* Main Heading */}
         <h2 className="text-4xl md:text-6xl font-bold text-black text-center mb-16 leading-tight">
-          Common questions from
+          Common{" "}
+          <span className="italic font-light text-orange-600">questions</span>{" "}
+          from
           <br />
-          Prague <span className="italic font-light">business owners</span>
+          small{" "}
+          <span className="italic font-light text-blue-600">
+            business owners
+          </span>
         </h2>
 
         {/* FAQ Accordion */}

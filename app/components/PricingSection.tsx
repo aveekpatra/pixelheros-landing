@@ -1,197 +1,208 @@
 "use client";
 
 import { ArrowUpRight, Check } from "lucide-react";
+import { useState } from "react";
 
 export default function PricingSection() {
+  const [isSubscription, setIsSubscription] = useState(true);
+
   return (
     <section className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Main Heading */}
         <h2 className="text-4xl md:text-6xl font-bold text-black text-center mb-16 leading-tight max-w-4xl mx-auto">
-          Choose the perfect plan
+          Choose the{" "}
+          <span className="italic font-light text-blue-600">plan</span> that
           <br />
-          for your <span className="italic font-light">business growth</span>
+          fits your{" "}
+          <span className="italic font-light text-purple-600">business</span>
         </h2>
 
+        {/* Simple Toggle */}
+        <div className="flex justify-center mb-16">
+          <div className="bg-gray-100 rounded-full p-1 flex items-center">
+            <button
+              onClick={() => setIsSubscription(true)}
+              className={`px-6 py-3 rounded-full font-medium text-sm transition-all ${
+                isSubscription
+                  ? "bg-white text-black shadow-sm"
+                  : "text-gray-600 hover:text-black"
+              }`}
+            >
+              Monthly
+            </button>
+            <button
+              onClick={() => setIsSubscription(false)}
+              className={`px-6 py-3 rounded-full font-medium text-sm transition-all ${
+                !isSubscription
+                  ? "bg-white text-black shadow-sm"
+                  : "text-gray-600 hover:text-black"
+              }`}
+            >
+              One-time
+            </button>
+          </div>
+        </div>
+
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Essential Plan */}
-          <div className="bg-blue-50 rounded-3xl p-8 relative border-2 border-blue-200">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Starter Plan */}
+          <div className="bg-yellow-100 rounded-3xl p-8 relative">
             {/* Plan Badge */}
-            <div className="inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-              Essential
+            <div className="inline-block bg-black text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+              Starter
             </div>
 
             {/* Description */}
-            <p className="text-black text-lg mb-8 leading-relaxed">
-              Perfect for restaurants, cafés, and small businesses wanting to
-              establish strong online presence
+            <p className="text-black text-base mb-8 leading-relaxed">
+              Perfect for small businesses getting started online. Essential
+              services to establish your digital presence.
             </p>
 
-            {/* Pricing Options */}
+            {/* Pricing */}
             <div className="mb-8">
-              <div className="bg-white rounded-2xl p-6 mb-4 border border-blue-200">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-lg font-semibold">
-                    Monthly Subscription
-                  </span>
-                  <span className="text-2xl font-bold text-blue-600">€299</span>
-                </div>
-                <p className="text-gray-600 text-sm">
-                  Ongoing support & updates included
-                </p>
-              </div>
-              <div className="bg-white rounded-2xl p-6 border border-blue-200">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-lg font-semibold">
-                    One-time Payment
-                  </span>
-                  <span className="text-2xl font-bold text-blue-600">
-                    €2,499
-                  </span>
-                </div>
-                <p className="text-gray-600 text-sm">
-                  Complete setup + 6 months support
-                </p>
+              <div className="flex items-baseline gap-2 mb-2">
+                <span className="text-5xl font-bold text-black">
+                  ${isSubscription ? "1200" : "8000"}
+                </span>
+                <span className="text-gray-600">
+                  {isSubscription ? "/month" : "one-time"}
+                </span>
               </div>
             </div>
 
             {/* CTA Button */}
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-blue-700 transition-colors mb-8 w-full justify-center">
-              Get Started
+            <button className="bg-black text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 hover:bg-gray-800 transition-colors mb-8 w-full justify-center">
+              Let&apos;s Collaborate
               <ArrowUpRight size={20} />
             </button>
 
             {/* Features */}
-            <div className="space-y-4">
-              <div className="text-black font-semibold mb-4">
-                What's Included:
-              </div>
+            <div className="space-y-3">
+              <div className="text-black font-medium mb-4">Features</div>
               <div className="flex items-center gap-3">
-                <Check size={20} className="text-green-600" />
-                <span className="text-black">
-                  Professional Website (5 pages)
+                <Check size={16} className="text-green-600" />
+                <span className="text-black text-sm">
+                  {isSubscription
+                    ? "Design Updates Every 2 Days"
+                    : "Complete Brand Setup"}
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <Check size={20} className="text-green-600" />
-                <span className="text-black">Local SEO Optimization</span>
+                <Check size={16} className="text-green-600" />
+                <span className="text-black text-sm">
+                  {isSubscription
+                    ? "Mid-level Designer"
+                    : "Professional Website"}
+                </span>
               </div>
               <div className="flex items-center gap-3">
-                <Check size={20} className="text-green-600" />
-                <span className="text-black">Google My Business Setup</span>
+                <Check size={16} className="text-green-600" />
+                <span className="text-black text-sm">SEO optimization</span>
               </div>
               <div className="flex items-center gap-3">
-                <Check size={20} className="text-green-600" />
-                <span className="text-black">Mobile Optimization</span>
+                <Check size={16} className="text-green-600" />
+                <span className="text-black text-sm">
+                  {isSubscription ? "Monthly analytics" : "Analytics setup"}
+                </span>
               </div>
               <div className="flex items-center gap-3">
-                <Check size={20} className="text-green-600" />
-                <span className="text-black">Basic Analytics Setup</span>
+                <Check size={16} className="text-green-600" />
+                <span className="text-black text-sm">
+                  {isSubscription
+                    ? "2x Calls Per Month"
+                    : "Strategy consultation"}
+                </span>
               </div>
               <div className="flex items-center gap-3">
-                <Check size={20} className="text-green-600" />
-                <span className="text-black">Monthly Performance Reports</span>
+                <Check size={16} className="text-green-600" />
+                <span className="text-black text-sm">License free assets</span>
               </div>
             </div>
           </div>
 
-          {/* Premium Plan */}
-          <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 relative border-2 border-purple-200">
-            {/* Popular Badge */}
-            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full text-sm font-medium">
-              Most Popular
-            </div>
-
+          {/* Pro Plan */}
+          <div className="bg-blue-600 rounded-3xl p-8 relative text-white">
             {/* Plan Badge */}
-            <div className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6 mt-4">
-              Premium
+            <div className="inline-block bg-black text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+              Pro
             </div>
 
             {/* Description */}
-            <p className="text-black text-lg mb-8 leading-relaxed">
-              Ideal for salons, hotels, and growing businesses wanting complete
-              digital dominance
+            <p className="text-white text-base mb-8 leading-relaxed">
+              For growing businesses that need comprehensive digital marketing
+              and ongoing support.
             </p>
 
-            {/* Pricing Options */}
+            {/* Pricing */}
             <div className="mb-8">
-              <div className="bg-white rounded-2xl p-6 mb-4 border border-purple-200">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-lg font-semibold">
-                    Monthly Subscription
-                  </span>
-                  <span className="text-2xl font-bold text-purple-600">
-                    €499
-                  </span>
-                </div>
-                <p className="text-gray-600 text-sm">
-                  Full-service digital marketing
-                </p>
-              </div>
-              <div className="bg-white rounded-2xl p-6 border border-purple-200">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-lg font-semibold">
-                    One-time Payment
-                  </span>
-                  <span className="text-2xl font-bold text-purple-600">
-                    €4,499
-                  </span>
-                </div>
-                <p className="text-gray-600 text-sm">
-                  Complete setup + 12 months support
-                </p>
+              <div className="flex items-baseline gap-2 mb-2">
+                <span className="text-5xl font-bold text-white">
+                  ${isSubscription ? "2400" : "15000"}
+                </span>
+                <span className="text-blue-200">
+                  {isSubscription ? "/month" : "one-time"}
+                </span>
               </div>
             </div>
 
             {/* CTA Button */}
-            <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:opacity-90 transition-opacity mb-8 w-full justify-center">
-              Start Premium
+            <button className="bg-black text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 hover:bg-gray-800 transition-colors mb-8 w-full justify-center">
+              Let&apos;s Collaborate
               <ArrowUpRight size={20} />
             </button>
 
             {/* Features */}
-            <div className="space-y-4">
-              <div className="text-black font-semibold mb-4">
-                Everything in Essential, plus:
-              </div>
+            <div className="space-y-3">
+              <div className="text-white font-medium mb-4">Features</div>
               <div className="flex items-center gap-3">
-                <Check size={20} className="text-green-600" />
-                <span className="text-black">Advanced Website (10+ pages)</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check size={20} className="text-green-600" />
-                <span className="text-black">Social Media Management</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check size={20} className="text-green-600" />
-                <span className="text-black">
-                  Content Creation (posts, photos)
+                <Check size={16} className="text-green-400" />
+                <span className="text-white text-sm">
+                  {isSubscription
+                    ? "Design Updates Daily"
+                    : "Premium Brand Package"}
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <Check size={20} className="text-green-600" />
-                <span className="text-black">Advanced SEO & Link Building</span>
+                <Check size={16} className="text-green-400" />
+                <span className="text-white text-sm">
+                  {isSubscription
+                    ? "Senior-level Designer"
+                    : "Custom Development"}
+                </span>
               </div>
               <div className="flex items-center gap-3">
-                <Check size={20} className="text-green-600" />
-                <span className="text-black">Online Booking System</span>
+                <Check size={16} className="text-green-400" />
+                <span className="text-white text-sm">
+                  {isSubscription ? "AI Advisory Framework" : "Advanced UI/UX"}
+                </span>
               </div>
               <div className="flex items-center gap-3">
-                <Check size={20} className="text-green-600" />
-                <span className="text-black">Priority Support & Updates</span>
+                <Check size={16} className="text-green-400" />
+                <span className="text-white text-sm">
+                  {isSubscription
+                    ? "Full-service Creative Team"
+                    : "Marketing Strategy"}
+                </span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Check size={16} className="text-green-400" />
+                <span className="text-white text-sm">
+                  {isSubscription ? "4x Calls Per Month" : "Priority Support"}
+                </span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Check size={16} className="text-green-400" />
+                <span className="text-white text-sm">License free assets</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Additional Info */}
-        <div className="text-center mt-12">
-          <p className="text-gray-600 text-lg mb-4">
-            All plans include free consultation and setup. No hidden fees.
-          </p>
-          <p className="text-gray-500">
-            Based in Prague • Serving businesses across Czech Republic
+        {/* Simple Footer */}
+        <div className="text-center mt-16">
+          <p className="text-gray-600 text-lg">
+            All plans include strategic consultation and discovery phase.
           </p>
         </div>
       </div>

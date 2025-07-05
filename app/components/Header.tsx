@@ -11,7 +11,7 @@ export default function Header() {
           <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
             <div className="w-4 h-4 bg-white rounded-full"></div>
           </div>
-          <span className="text-xl font-semibold text-black">Awake</span>
+          <span className="text-xl font-semibold text-black">PixelHeros</span>
         </div>
 
         {/* Navigation */}
@@ -62,7 +62,7 @@ export default function Header() {
 
         {/* CTA Button */}
         <button className="bg-black text-white px-6 py-3 rounded-full font-medium flex items-center gap-2 hover:bg-gray-800 transition-colors">
-          Let's Collaborate
+          Let&apos;s Collaborate
           <ArrowUpRight size={18} />
         </button>
       </div>

@@ -2,11 +2,11 @@
 
 import {
   ArrowUpRight,
-  Globe,
-  Search,
-  Instagram,
-  MapPin,
-  Smartphone,
+  Palette,
+  Code,
+  TrendingUp,
+  Users,
+  Zap,
 } from "lucide-react";
 
 export default function ServicesSection() {
@@ -15,56 +15,60 @@ export default function ServicesSection() {
       <div className="max-w-7xl mx-auto">
         {/* Main Heading */}
         <h2 className="text-4xl md:text-6xl font-bold text-black text-center mb-16 leading-tight">
-          Everything your business needs
+          Essential services to{" "}
+          <span className="italic font-light text-green-600">grow</span>
           <br />
-          to succeed <span className="italic font-light">online</span>
+          your{" "}
+          <span className="italic font-light text-blue-600">
+            business online
+          </span>
         </h2>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
-          {/* Professional Website */}
+          {/* Brand Strategy */}
           <div className="bg-blue-100 p-8 rounded-3xl">
             <div className="mb-6">
-              <Globe size={32} className="text-black" />
+              <Zap size={32} className="text-black" />
             </div>
-            <h3 className="text-xl font-semibold text-black mb-2">Professional</h3>
-            <p className="text-black">Website</p>
+            <h3 className="text-xl font-semibold text-black mb-2">Brand</h3>
+            <p className="text-black">Strategy</p>
           </div>
 
-          {/* Local SEO */}
+          {/* Web Development */}
           <div className="bg-green-100 p-8 rounded-3xl">
             <div className="mb-6">
-              <Search size={32} className="text-black" />
+              <Code size={32} className="text-black" />
             </div>
-            <h3 className="text-xl font-semibold text-black mb-2">Local</h3>
-            <p className="text-black">SEO</p>
+            <h3 className="text-xl font-semibold text-black mb-2">Web</h3>
+            <p className="text-black">Development</p>
           </div>
 
-          {/* Social Media */}
+          {/* Digital Marketing */}
           <div className="bg-pink-100 p-8 rounded-3xl">
             <div className="mb-6">
-              <Instagram size={32} className="text-black" />
+              <TrendingUp size={32} className="text-black" />
             </div>
-            <h3 className="text-xl font-semibold text-black mb-2">Social</h3>
-            <p className="text-black">Media</p>
+            <h3 className="text-xl font-semibold text-black mb-2">Digital</h3>
+            <p className="text-black">Marketing</p>
           </div>
 
-          {/* Google My Business */}
+          {/* UI/UX Design */}
           <div className="bg-orange-100 p-8 rounded-3xl">
             <div className="mb-6">
-              <MapPin size={32} className="text-black" />
+              <Palette size={32} className="text-black" />
             </div>
-            <h3 className="text-xl font-semibold text-black mb-2">Google</h3>
-            <p className="text-black">My Business</p>
+            <h3 className="text-xl font-semibold text-black mb-2">UI/UX</h3>
+            <p className="text-black">Design</p>
           </div>
 
-          {/* Mobile Optimization */}
+          {/* Growth Analytics */}
           <div className="bg-purple-100 p-8 rounded-3xl">
             <div className="mb-6">
-              <Smartphone size={32} className="text-black" />
+              <Users size={32} className="text-black" />
             </div>
-            <h3 className="text-xl font-semibold text-black mb-2">Mobile</h3>
-            <p className="text-black">Optimization</p>
+            <h3 className="text-xl font-semibold text-black mb-2">Growth</h3>
+            <p className="text-black">Analytics</p>
           </div>
         </div>
 
@@ -72,15 +76,15 @@ export default function ServicesSection() {
         <div className="bg-black rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between">
           <div className="text-white mb-6 md:mb-0">
             <h3 className="text-2xl md:text-3xl font-semibold mb-2">
-              Ready to dominate your local market?
+              Ready to grow your business online?
             </h3>
             <p className="text-2xl md:text-3xl font-semibold">
-              Let's grow your business together!
+              Let&apos;s build something great together!
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="bg-white text-black px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-gray-100 transition-colors">
-              Get Free Consultation
+              Start Your Project
               <ArrowUpRight size={20} />
             </button>
             <button className="border border-white text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-white hover:text-black transition-colors">
