@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -46,11 +46,11 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-20 px-6 bg-gray-50">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gray-50">
       <div className="max-w-4xl mx-auto">
         {/* Main Heading */}
         <motion.h2
-          className="text-4xl md:text-6xl font-bold text-black text-center mb-16 leading-tight"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black text-center mb-12 sm:mb-16 leading-tight px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -67,57 +67,57 @@ export default function FAQSection() {
         </motion.h2>
 
         {/* FAQ Accordion */}
-        <motion.div
-          className="space-y-4"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-lg"
+              className="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-200"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              whileHover={{ scale: 1.02 }}
-              style={{ willChange: "transform" }}
+              transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
+              viewport={{ once: true, margin: "-50px" }}
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
               >
-                <span className="text-lg md:text-xl font-semibold text-black pr-4">
+                <span className="text-base sm:text-lg md:text-xl font-semibold text-black pr-3 sm:pr-4 leading-snug">
                   {faq.question}
                 </span>
-                <div className="flex-shrink-0">
+                <motion.div
+                  className="flex-shrink-0"
+                  animate={{ rotate: openIndex === index ? 180 : 0 }}
+                  transition={{ duration: 0.2 }}
+                >
                   {openIndex === index ? (
-                    <Minus size={24} className="text-black" />
+                    <Minus size={20} className="text-black sm:w-6 sm:h-6" />
                   ) : (
-                    <Plus size={24} className="text-black" />
+                    <Plus size={20} className="text-black sm:w-6 sm:h-6" />
                   )}
-                </div>
+                </motion.div>
               </button>
 
-              {/* Accordion Content */}
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openIndex === index
-                    ? "max-h-96 opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="px-8 pb-6 pt-2">
-                  <p className="text-gray-600 leading-relaxed text-lg">
-                    {faq.answer}
-                  </p>
-                </div>
-              </div>
+              {/* Accordion Content with AnimatePresence */}
+              <AnimatePresence initial={false}>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6 pt-1 sm:pt-2">
+                      <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

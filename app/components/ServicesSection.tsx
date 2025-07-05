@@ -12,11 +12,11 @@ import { motion } from "motion/react";
 
 export default function ServicesSection() {
   return (
-    <section className="py-20 px-6 bg-gray-50">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Main Heading */}
         <motion.h2
-          className="text-4xl md:text-6xl font-bold text-black text-center mb-16 leading-tight"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black text-center mb-12 sm:mb-16 leading-tight px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -33,7 +33,7 @@ export default function ServicesSection() {
 
         {/* Services Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 mb-12 sm:mb-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -73,7 +73,7 @@ export default function ServicesSection() {
           ].map((service, index) => (
             <motion.div
               key={service.title}
-              className={`${service.bg} p-8 rounded-3xl`}
+              className={`${service.bg} p-6 sm:p-8 rounded-3xl`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
@@ -85,69 +85,73 @@ export default function ServicesSection() {
               style={{ willChange: "transform" }}
             >
               <motion.div
-                className="mb-6"
+                className="mb-4 sm:mb-6"
                 whileHover={{
                   rotate: 5,
                   transition: { duration: 0.2 },
                 }}
               >
-                <service.icon size={32} className="text-black" />
+                <service.icon size={28} className="text-black sm:w-8 sm:h-8" />
               </motion.div>
-              <h3 className="text-xl font-semibold text-black mb-2">
+              <h3 className="text-lg sm:text-xl font-semibold text-black mb-1 sm:mb-2">
                 {service.title}
               </h3>
-              <p className="text-black">{service.subtitle}</p>
+              <p className="text-black text-sm sm:text-base">
+                {service.subtitle}
+              </p>
             </motion.div>
           ))}
         </motion.div>
 
         {/* CTA Section */}
         <motion.div
-          className="bg-black rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between"
+          className="bg-black rounded-3xl p-6 sm:p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <motion.div
-            className="text-white mb-6 md:mb-0"
+            className="text-white text-center lg:text-left"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <h3 className="text-2xl md:text-3xl font-semibold mb-2">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2">
               Ready to grow your business online?
             </h3>
-            <p className="text-2xl md:text-3xl font-semibold">
+            <p className="text-xl sm:text-2xl md:text-3xl font-semibold">
               Let&apos;s build something great together!
             </p>
           </motion.div>
           <motion.div
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full lg:w-auto"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <motion.button
-              className="bg-white text-black px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-gray-100 transition-colors"
+            <motion.a
+              href="#contact"
+              className="bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors text-sm sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               style={{ willChange: "transform" }}
             >
               Start Your Project
-              <ArrowUpRight size={20} />
-            </motion.button>
-            <motion.button
-              className="border border-white text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-white hover:text-black transition-colors"
+              <ArrowUpRight size={18} className="sm:w-5 sm:h-5" />
+            </motion.a>
+            <motion.a
+              href="#work"
+              className="border border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-white hover:text-black transition-colors text-sm sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               style={{ willChange: "transform" }}
             >
               View Our Work
-              <ArrowUpRight size={20} />
-            </motion.button>
+              <ArrowUpRight size={18} className="sm:w-5 sm:h-5" />
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>

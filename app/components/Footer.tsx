@@ -1,85 +1,94 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-white py-16 px-6 border-t border-gray-100">
+    <footer className="bg-white py-12 sm:py-16 px-4 sm:px-6 border-t border-gray-100">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 mb-8 sm:mb-12">
           {/* Brand Section */}
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-full"></div>
-            </div>
-            <span className="text-2xl font-semibold text-black">
+            <Image
+              src="/logo.png"
+              alt="PixelHeros Logo"
+              width={32}
+              height={32}
+              className="w-8 h-8"
+            />
+            <span className="text-xl sm:text-2xl font-semibold text-black">
               PixelHeros
             </span>
           </div>
 
           {/* Navigation Links */}
-          <nav className="flex flex-wrap items-center gap-8 text-center">
+          <nav className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-8 text-center">
             <a
-              href="#"
-              className="text-gray-600 hover:text-black transition-colors font-medium"
+              href="#home"
+              className="text-gray-600 hover:text-black transition-colors font-medium text-sm sm:text-base"
             >
               Home
             </a>
             <a
-              href="#"
-              className="text-gray-600 hover:text-black transition-colors font-medium"
+              href="#about"
+              className="text-gray-600 hover:text-black transition-colors font-medium text-sm sm:text-base"
             >
-              About us
+              About
             </a>
             <a
-              href="#"
-              className="text-gray-600 hover:text-black transition-colors font-medium"
+              href="#services"
+              className="text-gray-600 hover:text-black transition-colors font-medium text-sm sm:text-base"
             >
               Services
             </a>
             <a
-              href="#"
-              className="text-gray-600 hover:text-black transition-colors font-medium"
+              href="#work"
+              className="text-gray-600 hover:text-black transition-colors font-medium text-sm sm:text-base"
             >
               Work
             </a>
             <a
-              href="#"
-              className="text-gray-600 hover:text-black transition-colors font-medium"
+              href="#testimonials"
+              className="text-gray-600 hover:text-black transition-colors font-medium text-sm sm:text-base"
             >
-              Team
+              Testimonials
             </a>
             <a
-              href="#"
-              className="text-gray-600 hover:text-black transition-colors font-medium"
+              href="#pricing"
+              className="text-gray-600 hover:text-black transition-colors font-medium text-sm sm:text-base"
             >
               Pricing
             </a>
             <a
-              href="#"
-              className="text-gray-600 hover:text-black transition-colors font-medium"
+              href="#contact"
+              className="text-gray-600 hover:text-black transition-colors font-medium text-sm sm:text-base"
             >
-              Awards
+              Contact
             </a>
           </nav>
 
           {/* CTA Button */}
-          <button className="bg-black text-white px-6 py-3 rounded-full font-medium flex items-center gap-2 hover:bg-gray-800 transition-colors">
-            Let&apos;s Collaborate
-            <ArrowUpRight size={18} />
-          </button>
+          <a
+            href="#contact"
+            className="bg-black text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-medium flex items-center gap-2 hover:bg-gray-800 transition-colors text-sm sm:text-base"
+          >
+            <span className="hidden sm:inline">Let&apos;s Collaborate</span>
+            <span className="sm:hidden">Collaborate</span>
+            <ArrowUpRight size={16} className="sm:w-[18px] sm:h-[18px]" />
+          </a>
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-gray-100">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 pt-6 sm:pt-8 border-t border-gray-100">
           {/* Copyright */}
-          <div className="text-gray-500 text-sm">
+          <div className="text-gray-500 text-xs sm:text-sm text-center sm:text-left">
             © 2025 PixelHeros Digital Agency. All rights reserved.
           </div>
 
           {/* Legal Links */}
-          <div className="flex items-center gap-6 text-sm">
+          <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm">
             <a
               href="#"
               className="text-gray-500 hover:text-black transition-colors"

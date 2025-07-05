@@ -13,14 +13,30 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Header />
-      <Hero />
-      <StatsSection />
-      <ServicesSection />
-      <PortfolioSection />
-      <TestimonialsSection />
-      <PricingSection />
-      <FAQSection />
-      <CTASection />
+      <section id="home">
+        <Hero />
+      </section>
+      <section id="about">
+        <StatsSection />
+      </section>
+      <section id="services">
+        <ServicesSection />
+      </section>
+      <section id="work">
+        <PortfolioSection />
+      </section>
+      <section id="testimonials">
+        <TestimonialsSection />
+      </section>
+      <section id="pricing">
+        <PricingSection />
+      </section>
+      <section id="faq">
+        <FAQSection />
+      </section>
+      <section id="contact">
+        <CTASection />
+      </section>
       <Footer />
     </div>
   );

@@ -90,44 +90,44 @@ export default function Hero() {
   const letters = currentText.split("");
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 py-20 bg-white relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 bg-white relative overflow-hidden">
       {/* Blurred Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
-          className="absolute top-1/4 left-1/4 w-80 h-80 bg-gradient-to-br from-blue-200/25 to-purple-200/15 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-60 sm:w-80 h-60 sm:h-80 bg-gradient-to-br from-blue-200/25 to-purple-200/15 rounded-full blur-3xl"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2, delay: 0.7, ease: "easeOut" }}
-          className="absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-to-bl from-pink-200/20 to-orange-200/15 rounded-full blur-3xl"
+          className="absolute top-1/3 right-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-gradient-to-bl from-pink-200/20 to-orange-200/15 rounded-full blur-3xl"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2, delay: 0.3, ease: "easeOut" }}
-          className="absolute top-1/2 left-1/6 transform -translate-y-1/2 w-72 h-72 bg-gradient-to-tr from-green-200/20 to-teal-200/15 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/6 transform -translate-y-1/2 w-56 sm:w-72 h-56 sm:h-72 bg-gradient-to-tr from-green-200/20 to-teal-200/15 rounded-full blur-3xl"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2, delay: 0.9, ease: "easeOut" }}
-          className="absolute top-1/2 right-1/6 transform -translate-y-1/2 w-88 h-88 bg-gradient-to-tl from-yellow-200/25 to-amber-200/15 rounded-full blur-3xl"
+          className="absolute top-1/2 right-1/6 transform -translate-y-1/2 w-72 sm:w-88 h-72 sm:h-88 bg-gradient-to-tl from-yellow-200/25 to-amber-200/15 rounded-full blur-3xl"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2, delay: 0.1, ease: "easeOut" }}
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-r from-violet-200/10 to-indigo-200/10 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 sm:w-[600px] h-64 sm:h-[400px] bg-gradient-to-r from-violet-200/10 to-indigo-200/10 rounded-full blur-3xl"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2, delay: 1.1, ease: "easeOut" }}
-          className="absolute bottom-1/4 left-1/2 transform -translate-x-1/2 w-80 h-80 bg-gradient-to-t from-rose-200/15 to-pink-200/20 rounded-full blur-3xl"
+          className="absolute bottom-1/4 left-1/2 transform -translate-x-1/2 w-60 sm:w-80 h-60 sm:h-80 bg-gradient-to-t from-rose-200/15 to-pink-200/20 rounded-full blur-3xl"
         />
       </div>
 
@@ -138,15 +138,15 @@ export default function Hero() {
         animate="visible"
       >
         {/* Main Heading */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <motion.h1
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-black leading-[0.95] tracking-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold text-black leading-[0.95] tracking-tight"
             variants={textVariants}
           >
-            <motion.span className="block mb-4" variants={textVariants}>
+            <motion.span className="block mb-2 sm:mb-4" variants={textVariants}>
               We build online brands
             </motion.span>
-            <motion.span className="block mb-4" variants={textVariants}>
+            <motion.span className="block mb-2 sm:mb-4" variants={textVariants}>
               that{" "}
               <span className="relative inline-block">
                 <AnimatePresence mode="wait">
@@ -193,8 +193,8 @@ export default function Hero() {
         </div>
 
         {/* Description */}
-        <motion.div className="mb-12" variants={textVariants}>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
+        <motion.div className="mb-8 sm:mb-12" variants={textVariants}>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium px-4 sm:px-0">
             We&apos;re a new digital agency focused on helping small and medium
             businesses establish strong online presence. Professional websites,
             SEO, and social media that deliver real results.
@@ -203,11 +203,12 @@ export default function Hero() {
 
         {/* CTA Section */}
         <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-8"
+          className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8"
           variants={textVariants}
         >
           {/* Get Started Button */}
-          <motion.button
+          <motion.a
+            href="#contact"
             whileHover={{
               scale: 1.05,
               transition: { type: "spring", stiffness: 400, damping: 10 },
@@ -216,15 +217,15 @@ export default function Hero() {
               scale: 0.95,
               transition: { type: "spring", stiffness: 400, damping: 10 },
             }}
-            className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-blue-700 transition-colors duration-300 text-lg shadow-lg hover:shadow-xl"
+            className="bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-blue-700 transition-colors duration-300 text-base sm:text-lg shadow-lg hover:shadow-xl w-full sm:w-auto justify-center"
           >
             Get Started
-            <ArrowUpRight size={20} />
-          </motion.button>
+            <ArrowUpRight size={18} className="sm:w-5 sm:h-5" />
+          </motion.a>
 
           {/* User Avatars and Rating */}
           <motion.div
-            className="flex items-center gap-4"
+            className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -251,7 +252,7 @@ export default function Hero() {
                     stiffness: 200,
                     damping: 15,
                   }}
-                  className="w-10 h-10 rounded-full border-2 border-white shadow-md overflow-hidden"
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white shadow-md overflow-hidden"
                 >
                   <Image
                     src={src}
@@ -263,7 +264,7 @@ export default function Hero() {
                 </motion.div>
               ))}
             </div>
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-center sm:items-start">
               <motion.div
                 className="flex items-center gap-1"
                 initial={{ opacity: 0 }}
@@ -283,8 +284,8 @@ export default function Hero() {
                     }}
                   >
                     <Star
-                      size={16}
-                      className="fill-yellow-400 text-yellow-400"
+                      size={14}
+                      className="fill-yellow-400 text-yellow-400 sm:w-4 sm:h-4"
                     />
                   </motion.div>
                 ))}
@@ -298,7 +299,7 @@ export default function Hero() {
                   stiffness: 100,
                   damping: 15,
                 }}
-                className="text-sm font-medium text-gray-600 mt-1"
+                className="text-xs sm:text-sm font-medium text-gray-600 mt-1 text-center sm:text-left"
               >
                 Rated 5 stars by clients
               </motion.span>
