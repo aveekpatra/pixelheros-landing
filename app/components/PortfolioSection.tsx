@@ -1,6 +1,19 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  Utensils,
+  Wine,
+  Camera,
+  Scissors,
+  Globe,
+  Search,
+  Calendar,
+  BarChart3,
+  MapPin,
+  Palette,
+  ShoppingCart,
+} from "lucide-react";
 import { motion } from "motion/react";
 
 export default function PortfolioSection() {
@@ -41,78 +54,84 @@ export default function PortfolioSection() {
           {[
             {
               name: "Abu Restaurant",
-              logo: "🥙",
+              icon: Utensils,
               category: "Restaurant & Hospitality",
               description:
                 "Authentic Middle Eastern restaurant in Prague seeking to increase table bookings and local visibility.",
-              services: ["Website Design", "Online Booking", "Local SEO"],
+              services: [
+                { name: "Website Design", icon: Globe },
+                { name: "Online Booking", icon: Calendar },
+                { name: "Local SEO", icon: MapPin },
+              ],
               result: "+85%",
               resultLabel: "Table Bookings",
               url: "https://aveekpatra.github.io/Abu-restaurant/",
               bgColor: "bg-amber-50",
               accentColor: "text-amber-600",
+              iconColor: "text-amber-600",
             },
             {
               name: "U Blanických Rytířů",
-              logo: "🍷",
+              icon: Wine,
               category: "Fine Dining",
               description:
                 "Modern metro restaurant with fine dining experience looking to attract discerning customers.",
               services: [
-                "Website Development",
-                "Brand Identity",
-                "Digital Marketing",
+                { name: "Website Development", icon: Globe },
+                { name: "Brand Identity", icon: Palette },
+                { name: "Digital Marketing", icon: BarChart3 },
               ],
               result: "+120%",
               resultLabel: "Reservations",
               url: "https://modern-metro-restaurant.vercel.app/",
               bgColor: "bg-purple-50",
               accentColor: "text-purple-600",
+              iconColor: "text-purple-600",
             },
             {
               name: "Richard Ryan Photography",
-              logo: "📸",
+              icon: Camera,
               category: "Creative Services",
               description:
                 "Professional photographer specializing in portraits and events, needing a stunning portfolio showcase.",
               services: [
-                "Portfolio Website",
-                "Gallery System",
-                "SEO Optimization",
+                { name: "Portfolio Website", icon: Globe },
+                { name: "Gallery System", icon: Camera },
+                { name: "SEO Optimization", icon: Search },
               ],
               result: "+200%",
               resultLabel: "Client Inquiries",
               url: "https://richard-ryan-rose.vercel.app/",
               bgColor: "bg-blue-50",
               accentColor: "text-blue-600",
+              iconColor: "text-blue-600",
             },
             {
               name: "Barber Ochre",
-              logo: "✂️",
+              icon: Scissors,
               category: "Beauty & Wellness",
               description:
                 "Premium barber shop and hair salon services requiring modern booking system and local presence.",
               services: [
-                "Website Design",
-                "Appointment System",
-                "Google My Business",
+                { name: "Website Design", icon: Globe },
+                { name: "Appointment System", icon: Calendar },
+                { name: "Google My Business", icon: MapPin },
               ],
               result: "+150%",
               resultLabel: "Online Bookings",
               url: "https://barber-ochre-tau.vercel.app/",
               bgColor: "bg-green-50",
               accentColor: "text-green-600",
+              iconColor: "text-green-600",
             },
           ].map((project, index) => (
             <motion.div
               key={project.name}
-              className={`${project.bgColor} rounded-3xl p-8 sm:p-10 relative overflow-hidden group hover:shadow-xl transition-all duration-500`}
+              className={`${project.bgColor} rounded-3xl p-8 sm:p-10 relative overflow-hidden group cursor-pointer`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.2 + index * 0.05 }}
               viewport={{ once: true, margin: "-150px" }}
-              whileHover={{ y: -8 }}
-              style={{ willChange: "transform" }}
             >
               {/* Background Pattern */}
               <div className="absolute inset-0 opacity-5">
@@ -124,8 +143,8 @@ export default function PortfolioSection() {
                 {/* Header */}
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-2xl shadow-sm">
-                      {project.logo}
+                    <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-gray-100">
+                      <project.icon size={28} className={project.iconColor} />
                     </div>
                     <div>
                       <h3 className="text-2xl sm:text-3xl font-bold text-black mb-1">
@@ -156,32 +175,28 @@ export default function PortfolioSection() {
                 </p>
 
                 {/* Services */}
-                <div className="flex flex-wrap gap-2 mb-8">
+                <div className="flex flex-wrap gap-3 mb-8">
                   {project.services.map((service, serviceIndex) => (
-                    <span
+                    <div
                       key={serviceIndex}
-                      className="bg-white/70 text-gray-800 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm"
+                      className="bg-white/80 text-gray-800 px-4 py-2.5 rounded-full text-sm font-medium backdrop-blur-sm border border-white/50 flex items-center gap-2"
                     >
-                      {service}
-                    </span>
+                      <service.icon size={14} className="text-gray-600" />
+                      <span>{service.name}</span>
+                    </div>
                   ))}
                 </div>
 
                 {/* CTA */}
-                <motion.a
+                <a
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 group-hover:scale-105"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300"
                 >
                   <span>View Project</span>
-                  <ArrowUpRight
-                    size={18}
-                    className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"
-                  />
-                </motion.a>
+                  <ArrowUpRight size={18} />
+                </a>
               </div>
             </motion.div>
           ))}
