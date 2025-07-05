@@ -61,20 +61,26 @@ export default function PricingSection() {
             </div>
 
             {/* Description */}
-            <p className="text-black text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed">
-              Perfect for small businesses getting started online. Essential
-              services to establish your digital presence.
+            <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6">
+              {isSubscription
+                ? "Essential digital presence with professional website, SEO optimization, and business tools."
+                : "Complete business launch package with website, SEO, booking system, and Google optimization."}
             </p>
 
             {/* Pricing */}
             <div className="mb-6 sm:mb-8">
               <div className="flex items-baseline gap-2 mb-2">
                 <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
-                  ${isSubscription ? "1200" : "8000"}
+                  ${isSubscription ? "120" : "800"}
                 </span>
                 <span className="text-gray-600 text-sm sm:text-base">
                   {isSubscription ? "/month" : "one-time"}
                 </span>
+              </div>
+              <div className="text-gray-600 text-xs sm:text-sm">
+                {isSubscription
+                  ? "2,999 CZK/month • Cancel anytime"
+                  : "20,000 CZK • One-time payment"}
               </div>
             </div>
 
@@ -87,7 +93,7 @@ export default function PricingSection() {
             {/* Features */}
             <div className="space-y-2 sm:space-y-3">
               <div className="text-black font-medium mb-3 sm:mb-4 text-sm sm:text-base">
-                Features
+                What&apos;s Included
               </div>
               <div className="flex items-center gap-2 sm:gap-3">
                 <Check
@@ -96,37 +102,8 @@ export default function PricingSection() {
                 />
                 <span className="text-black text-xs sm:text-sm">
                   {isSubscription
-                    ? "Design Updates Every 2 Days"
-                    : "Complete Brand Setup"}
-                </span>
-              </div>
-              <div className="flex items-center gap-2 sm:gap-3">
-                <Check
-                  size={14}
-                  className="text-green-600 sm:w-4 sm:h-4 flex-shrink-0"
-                />
-                <span className="text-black text-xs sm:text-sm">
-                  {isSubscription
-                    ? "Mid-level Designer"
-                    : "Professional Website"}
-                </span>
-              </div>
-              <div className="flex items-center gap-2 sm:gap-3">
-                <Check
-                  size={14}
-                  className="text-green-600 sm:w-4 sm:h-4 flex-shrink-0"
-                />
-                <span className="text-black text-xs sm:text-sm">
-                  SEO optimization
-                </span>
-              </div>
-              <div className="flex items-center gap-2 sm:gap-3">
-                <Check
-                  size={14}
-                  className="text-green-600 sm:w-4 sm:h-4 flex-shrink-0"
-                />
-                <span className="text-black text-xs sm:text-sm">
-                  {isSubscription ? "Monthly analytics" : "Analytics setup"}
+                    ? "Professional website design & development"
+                    : "Complete website build & launch"}
                 </span>
               </div>
               <div className="flex items-center gap-2 sm:gap-3">
@@ -136,8 +113,8 @@ export default function PricingSection() {
                 />
                 <span className="text-black text-xs sm:text-sm">
                   {isSubscription
-                    ? "2x Calls Per Month"
-                    : "Strategy consultation"}
+                    ? "SEO optimization & monthly updates"
+                    : "Complete SEO setup & optimization"}
                 </span>
               </div>
               <div className="flex items-center gap-2 sm:gap-3">
@@ -146,7 +123,36 @@ export default function PricingSection() {
                   className="text-green-600 sm:w-4 sm:h-4 flex-shrink-0"
                 />
                 <span className="text-black text-xs sm:text-sm">
-                  License free assets
+                  Online reservation/booking system
+                </span>
+              </div>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <Check
+                  size={14}
+                  className="text-green-600 sm:w-4 sm:h-4 flex-shrink-0"
+                />
+                <span className="text-black text-xs sm:text-sm">
+                  Google Analytics & performance tracking
+                </span>
+              </div>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <Check
+                  size={14}
+                  className="text-green-600 sm:w-4 sm:h-4 flex-shrink-0"
+                />
+                <span className="text-black text-xs sm:text-sm">
+                  Google Maps & local business optimization
+                </span>
+              </div>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <Check
+                  size={14}
+                  className="text-green-600 sm:w-4 sm:h-4 flex-shrink-0"
+                />
+                <span className="text-black text-xs sm:text-sm">
+                  {isSubscription
+                    ? "Monthly performance reports & support"
+                    : "Training & handover documentation"}
                 </span>
               </div>
             </div>
@@ -160,20 +166,26 @@ export default function PricingSection() {
             </div>
 
             {/* Description */}
-            <p className="text-white text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed">
-              For growing businesses that need comprehensive digital marketing
-              and ongoing support.
+            <p className="text-blue-200 text-xs sm:text-sm mb-4 sm:mb-6">
+              {isSubscription
+                ? "Complete digital marketing solution with social media management, advanced analytics, and priority support."
+                : "Full-service digital transformation with website, social media setup, and comprehensive marketing strategy."}
             </p>
 
             {/* Pricing */}
             <div className="mb-6 sm:mb-8">
               <div className="flex items-baseline gap-2 mb-2">
                 <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
-                  ${isSubscription ? "2400" : "15000"}
+                  ${isSubscription ? "250" : "1600"}
                 </span>
                 <span className="text-blue-200 text-sm sm:text-base">
                   {isSubscription ? "/month" : "one-time"}
                 </span>
+              </div>
+              <div className="text-blue-200 text-xs sm:text-sm">
+                {isSubscription
+                  ? "6,199 CZK/month • Cancel anytime"
+                  : "39,900 CZK • One-time payment"}
               </div>
             </div>
 
@@ -186,7 +198,7 @@ export default function PricingSection() {
             {/* Features */}
             <div className="space-y-2 sm:space-y-3">
               <div className="text-white font-medium mb-3 sm:mb-4 text-sm sm:text-base">
-                Features
+                Everything in Starter, plus:
               </div>
               <div className="flex items-center gap-2 sm:gap-3">
                 <Check
@@ -195,28 +207,8 @@ export default function PricingSection() {
                 />
                 <span className="text-white text-xs sm:text-sm">
                   {isSubscription
-                    ? "Design Updates Daily"
-                    : "Premium Brand Package"}
-                </span>
-              </div>
-              <div className="flex items-center gap-2 sm:gap-3">
-                <Check
-                  size={14}
-                  className="text-green-400 sm:w-4 sm:h-4 flex-shrink-0"
-                />
-                <span className="text-white text-xs sm:text-sm">
-                  {isSubscription
-                    ? "Senior-level Designer"
-                    : "Custom Development"}
-                </span>
-              </div>
-              <div className="flex items-center gap-2 sm:gap-3">
-                <Check
-                  size={14}
-                  className="text-green-400 sm:w-4 sm:h-4 flex-shrink-0"
-                />
-                <span className="text-white text-xs sm:text-sm">
-                  {isSubscription ? "AI Advisory Framework" : "Advanced UI/UX"}
+                    ? "Instagram content creation & management"
+                    : "Complete Instagram setup & content strategy"}
                 </span>
               </div>
               <div className="flex items-center gap-2 sm:gap-3">
@@ -226,8 +218,8 @@ export default function PricingSection() {
                 />
                 <span className="text-white text-xs sm:text-sm">
                   {isSubscription
-                    ? "Full-service Creative Team"
-                    : "Marketing Strategy"}
+                    ? "TikTok reels & short-form video content"
+                    : "TikTok account setup & viral content strategy"}
                 </span>
               </div>
               <div className="flex items-center gap-2 sm:gap-3">
@@ -236,7 +228,7 @@ export default function PricingSection() {
                   className="text-green-400 sm:w-4 sm:h-4 flex-shrink-0"
                 />
                 <span className="text-white text-xs sm:text-sm">
-                  {isSubscription ? "4x Calls Per Month" : "Priority Support"}
+                  Facebook & LinkedIn business optimization
                 </span>
               </div>
               <div className="flex items-center gap-2 sm:gap-3">
@@ -245,7 +237,31 @@ export default function PricingSection() {
                   className="text-green-400 sm:w-4 sm:h-4 flex-shrink-0"
                 />
                 <span className="text-white text-xs sm:text-sm">
-                  License free assets
+                  {isSubscription
+                    ? "Weekly social media analytics & insights"
+                    : "Social media advertising setup & training"}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <Check
+                  size={14}
+                  className="text-green-400 sm:w-4 sm:h-4 flex-shrink-0"
+                />
+                <span className="text-white text-xs sm:text-sm">
+                  {isSubscription
+                    ? "Priority support & bi-weekly strategy calls"
+                    : "Advanced e-commerce integration"}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <Check
+                  size={14}
+                  className="text-green-400 sm:w-4 sm:h-4 flex-shrink-0"
+                />
+                <span className="text-white text-xs sm:text-sm">
+                  {isSubscription
+                    ? "Custom graphics & brand assets creation"
+                    : "Complete brand identity package"}
                 </span>
               </div>
             </div>
