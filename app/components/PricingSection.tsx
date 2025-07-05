@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUpRight, Check } from "lucide-react";
+import { motion } from "motion/react";
 import { useState } from "react";
 
 export default function PricingSection() {
@@ -10,13 +11,19 @@ export default function PricingSection() {
     <section className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Main Heading */}
-        <h2 className="text-4xl md:text-6xl font-bold text-black text-center mb-16 leading-tight max-w-4xl mx-auto">
+        <motion.h2
+          className="text-4xl md:text-6xl font-bold text-black text-center mb-16 leading-tight max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           Choose the{" "}
           <span className="italic font-light text-blue-600">plan</span> that
           <br />
           fits your{" "}
           <span className="italic font-light text-purple-600">business</span>
-        </h2>
+        </motion.h2>
 
         {/* Simple Toggle */}
         <div className="flex justify-center mb-16">

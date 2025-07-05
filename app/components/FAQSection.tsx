@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { motion } from "motion/react";
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -48,7 +49,13 @@ export default function FAQSection() {
     <section className="py-20 px-6 bg-gray-50">
       <div className="max-w-4xl mx-auto">
         {/* Main Heading */}
-        <h2 className="text-4xl md:text-6xl font-bold text-black text-center mb-16 leading-tight">
+        <motion.h2
+          className="text-4xl md:text-6xl font-bold text-black text-center mb-16 leading-tight"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           Common{" "}
           <span className="italic font-light text-orange-600">questions</span>{" "}
           from
@@ -57,14 +64,26 @@ export default function FAQSection() {
           <span className="italic font-light text-blue-600">
             business owners
           </span>
-        </h2>
+        </motion.h2>
 
         {/* FAQ Accordion */}
-        <div className="space-y-4">
+        <motion.div
+          className="space-y-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {faqs.map((faq, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-lg"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              whileHover={{ scale: 1.02 }}
+              style={{ willChange: "transform" }}
             >
               <button
                 onClick={() => toggleFAQ(index)}
@@ -96,9 +115,9 @@ export default function FAQSection() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

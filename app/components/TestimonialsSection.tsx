@@ -1,24 +1,43 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "motion/react";
 
 export default function TestimonialsSection() {
   return (
     <section className="py-20 px-6 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Main Heading */}
-        <h2 className="text-4xl md:text-6xl font-bold text-black text-center mb-16 leading-tight max-w-4xl mx-auto">
+        <motion.h2
+          className="text-4xl md:text-6xl font-bold text-black text-center mb-16 leading-tight max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           What our{" "}
           <span className="italic font-light text-blue-600">clients</span>
           <br />
           are saying{" "}
           <span className="italic font-light text-green-600">about us</span>
-        </h2>
+        </motion.h2>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-3 gap-6"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {/* Main Testimonial - Large */}
-          <div className="lg:col-span-2">
+          <motion.div
+            className="lg:col-span-2"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             <div className="bg-black rounded-3xl p-8 h-full relative overflow-hidden">
               <div className="absolute top-4 left-4 text-gray-400 text-sm">
                 Client success
@@ -56,10 +75,18 @@ export default function TestimonialsSection() {
                 <div className="w-32 h-64 bg-gradient-to-b from-white to-transparent rounded-full"></div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Stats Card */}
-          <div className="bg-green-200 rounded-3xl p-8 flex flex-col justify-center items-center text-center">
+          <motion.div
+            className="bg-green-200 rounded-3xl p-8 flex flex-col justify-center items-center text-center"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true, margin: "-100px" }}
+            whileHover={{ scale: 1.05 }}
+            style={{ willChange: "transform" }}
+          >
             <div className="text-gray-600 text-sm mb-4">Average results</div>
             <div className="text-6xl md:text-7xl font-bold text-black mb-4">
               +150%
@@ -69,11 +96,17 @@ export default function TestimonialsSection() {
               <br />
               within 6 months.&quot;
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Bottom Testimonials Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {/* Left Testimonial - Biotech with Background */}
           <div className="rounded-3xl h-96 relative overflow-hidden">
             {/* Background Image */}
@@ -138,7 +171,7 @@ export default function TestimonialsSection() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
