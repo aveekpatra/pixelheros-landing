@@ -12,7 +12,10 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4 bg-white/80 backdrop-blur-md border-b border-gray-100/50">
+    <header
+      className="fixed top-0 left-0 right-0 z-[9999] px-4 sm:px-6 py-4 bg-white/80 backdrop-blur-md border-b border-gray-100/50"
+      data-lenis-prevent
+    >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
@@ -95,7 +98,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-100/50 shadow-lg">
+        <div className="lg:hidden absolute top-full left-0 right-0 z-[9999] bg-white/95 backdrop-blur-md border-b border-gray-100/50 shadow-lg">
           <nav className="flex flex-col px-6 py-4 space-y-4">
             <a
               href="#home"
